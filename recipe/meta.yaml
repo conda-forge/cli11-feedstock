@@ -1,5 +1,5 @@
 {% set name = "cli11" %}
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CLIUtils/CLI11/archive/v{{ version }}.tar.gz
-  sha256: 67640f37ec3be9289039930c987a492badc600645b65057023679f7bb99734e4
+  sha256: c780cf8cf3ba5ec2648a7eeb20a47e274493258f38a9b417628e0576f473a50b
 
 build:
   number: 0
@@ -30,7 +30,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'CLI11 is a command line parser for C++11 and beyond that provides a rich feature set with a simple and intuitive interface.'
+  summary: CLI11 is a command line parser for C++11 and beyond that provides a rich feature set with a simple and intuitive interface.
   description: |
     CLI11 provides all the features you expect in a powerful command line
     parser, with a beautiful, minimal syntax and no dependencies beyond
