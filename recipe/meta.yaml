@@ -1,5 +1,8 @@
 {% set name = "cli11" %}
 {% set version = "2.1.2" %}
+{% set sha_hash = "26291377e892ba0e5b4972cdfd4a2ab3bf53af8dac1f4ea8fe0d1376b625c8cb" %}
+{% set build_number = "0" %}
+
 
 package:
   name: {{ name|lower }}
@@ -7,20 +10,24 @@ package:
 
 source:
   url: https://github.com/CLIUtils/CLI11/archive/v{{ version }}.tar.gz
-  sha256: 26291377e892ba0e5b4972cdfd4a2ab3bf53af8dac1f4ea8fe0d1376b625c8cb
+  sha256: {{ sha_hash }}
 
 build:
-  number: 0
+  number: {{ build_number }}
 
 requirements:
   build:
-    - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make  # [unix]
+    - cmake
+    - ninja
+  host:
+    - libboost >=1.61
 
 test:
+  # NOTE: Author's tests are run from the build scripts in all architectures.
   commands:
+    # Insure files are installed to the correct location.
     - test -f $PREFIX/include/CLI/CLI.hpp  # [unix]
     - if exist %LIBRARY_INC%\CLI\CLI.hpp (exit 0) else (exit 1)  # [win]
 
@@ -44,8 +51,9 @@ about:
     Releases for details for current and past releases. Also see the
     Version 1.0 post, Version 1.3 post, or Version 1.6 post for more
     information.
-  doc_url: https://cliutils.github.io/CLI11/book
   dev_url: https://github.com/CLIUtils/CLI11
+  doc_url: https://cliutils.github.io/CLI11/book
+  doc_src_url: https://github.com/CLIUtils/CLI11/tree/main/docs
 
 extra:
   recipe-maintainers:
