@@ -1,5 +1,5 @@
 {% set name = "cli11" %}
-{% set version = "2.4.2" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CLIUtils/CLI11/archive/v{{ version }}.tar.gz
-  sha256: f2d893a65c3b1324c50d4e682c0cdc021dd0477ae2c048544f39eed6654b699a
+  sha256: 17e02b4cddc2fa348e5dbdbb582c59a3486fa2b2433e70a0c3bacb871334fd55
 
 build:
   number: 0
