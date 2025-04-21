@@ -1,7 +1,7 @@
 mkdir build
 cd build
 
-cmake ^
+cmake %CMAKE_ARGS% ^
 	-G "NMake Makefiles" ^
 	-DCLI11_BUILD_TESTS=OFF ^
 	-DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
