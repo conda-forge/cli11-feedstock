@@ -2,6 +2,7 @@ mkdir build
 cd build
 
 cmake \
+    -GNinja \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCLI11_BUILD_TESTS=OFF \
     -DCLI11_BUILD_EXAMPLES=OFF \
@@ -9,4 +10,4 @@ cmake \
     ${CMAKE_ARGS} \
     $SRC_DIR
 
-make install
+ninja install
