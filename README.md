@@ -27,7 +27,6 @@ Releases for details for current and past releases. Also see the
 Version 1.0 post, Version 1.3 post, or Version 1.6 post for more
 information.
 
-
 Current build status
 ====================
 
